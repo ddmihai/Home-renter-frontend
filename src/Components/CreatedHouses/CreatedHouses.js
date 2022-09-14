@@ -24,7 +24,7 @@ const CreatedHouses = ({userId}) => {
 
     return (
     <p>
-        Created <b>{housesList}</b> houses.
+        Created <b>{housesList ? housesList : 0}</b> houses.
     </p>
   )
 }
