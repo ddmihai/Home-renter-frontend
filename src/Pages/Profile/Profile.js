@@ -6,6 +6,7 @@ import CreatedHouses from '../../Components/CreatedHouses/CreatedHouses';
 import { ProfileAvatar, ProfileInfo, ProfileInfoTextWrapper, 
         ProfileWrapper, EditWrapper, CreateNewHouse } from './Profile.styles';
 
+        
 import Loading from '../Loading/Loading';
 
 // Context
