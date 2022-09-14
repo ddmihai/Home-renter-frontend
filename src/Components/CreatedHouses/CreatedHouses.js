@@ -10,7 +10,7 @@ const CreatedHouses = ({userId}) => {
     const getHouses = async userId => {
         try {
             const response = await GET_CREATED_HOUSES(userId);
-            setHousesList(response.data.length);
+            setHousesList(response.data.length === 0 ? 0 : response.data.length);
         } 
         catch (error) {
             console.log(error);    
