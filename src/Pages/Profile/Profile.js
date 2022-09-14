@@ -6,6 +6,8 @@ import CreatedHouses from '../../Components/CreatedHouses/CreatedHouses';
 import { ProfileAvatar, ProfileInfo, ProfileInfoTextWrapper, 
         ProfileWrapper, EditWrapper, CreateNewHouse } from './Profile.styles';
 
+import Loading from '../Loading/Loading';
+
 // Context
 import UserContext from '../../Context/userContext.js';
 
@@ -32,7 +34,7 @@ const Profile = () => {
       
       {/* Profile holder with avatar */}
       <ProfileInfo>
-        <ProfileAvatar alt='Profile avatar' src={avatarImage}/>
+        {avatarImage ? <ProfileAvatar alt='Profile avatar' src={avatarImage}/> : <Loading />}
         <ProfileInfoTextWrapper>
             <p>{userDetails.fName } {userDetails.lName}</p>
             <p>
