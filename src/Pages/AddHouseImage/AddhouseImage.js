@@ -32,11 +32,14 @@ const AddhouseImage = () => {
         try {
             array.map(async object => {
                 // Create a form data and assign an image for each array image    
-                let formData = new FormData();
-                formData.append('file', object);
+                const reader = new FileReader();
+                reader.readAsDataURL(object);
+                reader.onloadend = async () => {
 
                 // make the request and send all the created form data objects
-                await API_REQUEST.put(`/add-image/${_id}`, formData);
+                await API_REQUEST.put(`/add-image/${_id}`, {image: reader.result});
+                }
+                
             }); 
 
             // After uploading photos navigate to edit house
